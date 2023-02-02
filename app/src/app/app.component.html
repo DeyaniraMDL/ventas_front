@@ -1,0 +1,37 @@
+
+<mat-drawer-container class="container">
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+         <mat-icon>menu</mat-icon>
+       </button>
+       <span>Servicio</span>
+       <span class="example-spacer"></span>
+       <button mat-icon-button class="example-icon favorite-icon">
+        <mat-icon>cancel</mat-icon>
+       </button>
+    
+     </mat-toolbar>
+    <mat-drawer #drawer mode="side" >
+        <br>
+        <p [routerLink]="['/home']" *ngIf="usuario" class="hov"> <mat-icon>home</mat-icon> Inicio </p><br>
+        <p [routerLink]= "['/cliente']" *ngIf="usuario" class="hov"> <mat-icon>people</mat-icon> Cliente </p><br>
+        <p [routerLink]= "['/producto']" *ngIf="usuario" class="hov"> <mat-icon> local_mall</mat-icon> Producto </p><br>
+        <p [routerLink]= "['/venta']" *ngIf="usuario" class="hov"> <mat-icon>store</mat-icon> Venta </p><br>
+        <p> <mat-icon></mat-icon>Usuario: </p>
+        <p> <mat-icon></mat-icon> {{usuariologin}} <mat-icon></mat-icon></p>
+        <br>
+        <p (click)="logout(); drawer.toggle();" *ngIf="usuario" class="hov"> <mat-icon>cancel</mat-icon>  Cerrar Sesión </p>
+        
+    </mat-drawer>
+    <!-- <div *ngIf="usuario" >
+        <br>
+        <div class="button-containers">
+        <button mat-mini-fab type="button" color="basic" (click)="drawer.toggle();" > <mat-icon>menu</mat-icon> </button>
+        </div>
+    </div> -->
+    <div class=" globaltwo">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+
+

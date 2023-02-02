@@ -1,0 +1,30 @@
+
+    
+<mat-card >
+    <div>
+        <br><br><br><br><br>
+    </div>
+        <mat-card-header>
+        </mat-card-header>
+        <h1> Inicio De Sesión</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/1177/1177527.png" height="134px">
+    <mat-card-content>
+        <form [formGroup]="loginForm">
+     <p>
+        <mat-form-field>
+            <input type="text" [(ngModel)]="email" formControlName="emails"  matInput placeholder="Email">  
+        </mat-form-field>
+     </p>
+     <p>
+        <mat-form-field>
+            <input type="password" formControlName="passwords" [(ngModel)]="password" matInput placeholder="Contraseña">
+        </mat-form-field>
+     </p>
+        <button color="primary" (click)="login();" mat-raised-button>Iniciar Sesión</button>
+        </form>
+    </mat-card-content>
+    <div>
+        <br><br><br><br><br>
+    </div>
+
+</mat-card>

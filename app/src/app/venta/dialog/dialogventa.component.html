@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>{{ venta!=null ? 'Editar Venta' : 'Nueva Venta'}}</h1>
+
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label># Cliente</mat-label>
+        <input type="number" [(ngModel)]="idCliente" matInput>
+    </mat-form-field>
+
+      <mat-form-field>
+        <mat-label># Producto</mat-label>
+        <input type="text" [(ngModel)]="idProducto" matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Cantidad</mat-label>
+        <input type="number" [(ngModel)]="cantidad" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Precio Unitario</mat-label>
+        <input type="number" [(ngModel)]="precioUnitario" matInput>
+      </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+ <button mat-raised-button (click)="close()" color="warn">Cancelar</button>
+ <button mat-raised-button color="primary" (click)="venta!= null ? editVenta() : addVenta()">Guardar</button>
+</div>
